@@ -1,0 +1,5 @@
+google-adk
+google-generativeai
+PyYAML
+python-dotenv
+requests
