@@ -17,21 +17,13 @@ agents:
 logging:
   level: INFO                 # DEBUG / INFO / WARNING / ERROR
   save_to_file: false         # set true if you want logs saved later
-  file_path: logs/app.log     # will matter only if save_to_file = true
+  #file_path: logs/app.log     # will matter only if save_to_file = true
 
 # Reserved section for future global configurations
 services:
-  enable_google_search: true  # assistant uses built-in google_search
+  enable_google_search: false  # assistant uses built-in google_search
   enable_math_tools: true     # for calc_tools
   enable_time_tools: true     # for time_tools
 
-# Optional section for future agent registry support,
-# keeping it empty for now (your assistant is the root agent in Python).
-agents:
-  # Example of how future agents could be listed:
-  # planner:
-  #   enabled: true
-  #   description: "Plans tasks and events"
-  # math_expert:
-  #   enabled: true
-  #   description: "Specialized math reasoning agent"
+
+
