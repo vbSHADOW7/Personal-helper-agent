@@ -1,97 +1,109 @@
-# 🧠 Personal Helper Agent (Google ADK)
+🧠 Personal Helper Agent (Google ADK)
 
-A modular, scalable **AI-powered personal assistant** built using **Google Agent Development Kit (ADK)** with support for:
+A modular, scalable AI-powered personal assistant built using Google ADK (Agent Development Kit) with support for:
 
-- ✅ Tool-based reasoning (Time, Calculator, Web Search)
-- ✅ Centralized configuration using `config.yaml`
-- ✅ Secure environment variables using `.env`
-- ✅ Per-agent model configuration
-- ✅ Multi-agent ready architecture
-- ✅ Clean ADK root-agent entrypoint
+✅ Tool-based reasoning (Time, Calculator, Web Search)
 
----
+✅ Centralized configuration (config.yaml)
 
-## 📁 Project Structure
-```
-📁 Personal-helper
-├── .env
-├── .env.example
-├── config.yaml
-├── README.md
-├── requirements.txt
+✅ Secure environment management (.env)
+
+✅ Per-agent model configuration
+
+✅ Future-ready multi-agent architecture
+
+✅ Clean root-agent entrypoint for ADK
+
+This project is designed for research, experimentation, real-world deployment, and future expansion into specialized AI agents.
+
+📁 Project Structure
+C:.
+│   .env
+│   .env.example
+│   config.yaml
+│   README.md
+│   requirements.txt
 │
-│
-└── src/
-    ├── agent.py
-    ├── config_loader.py
+└───src
+    │   agent.py                # ✅ ADK entrypoint (root agent loader)
+    │   config_loader.py        # ✅ Centralized config + env loader
     │
-    ├── agents/
-    │   ├── __init__.py
-    │   └── assistant/
-    │       ├── agent.py
-    │       └── __init__.py
+    ├───agents
+    │   │   __init__.py
+    │   └───assistant
+    │       │   agent.py        # ✅ Assistant agent (root agent)
+    │       │   __init__.py
     │
-    └── tools/
-        ├── calc_tools.py
-        ├── time_tools.py
-        └── __init__.py
+    └───tools
+            calc_tools.py      # ✅ Math expression evaluator
+            time_tools.py      # ✅ UTC-based time tool
+            __init__.py
 
-```
----
+🚀 Features
+✅ Root Assistant Agent
 
-## 🚀 Features
+Acts as the primary interface for users
 
-### ✅ Root Assistant Agent
-- Acts as the main interface for users
-- Uses tools instead of guessing
-- Can delegate tasks to future auxiliary agents
+Uses tools instead of guessing
 
-### ✅ Built-in Tools
-- **UTC Time Tool** – Always returns UTC
-- **Calculator Tool** – Evaluates math expressions
-- **Google Search Tool (ADK Built-in)** – For real-time web queries
+Can delegate tasks to auxiliary agents (future)
 
-### ✅ Centralized Configuration
-- `config.yaml` → static settings
-- `.env` → secrets & runtime environment
-- `config_loader.py` → loads everything once using caching
+✅ Built-in Tools
 
-### ✅ Per-Agent Model Support
-Each agent can use a different model:
+UTC Time Tool – Fully timezone-safe
 
-```yaml
+Calculator Tool – Evaluates math expressions
+
+Google Search Tool (ADK Built-in) – For real-time web queries
+
+✅ Configuration System
+
+config.yaml – Static application & agent configuration
+
+.env – Secure runtime secrets (API keys)
+
+config_loader.py – Loads everything once, cached
+
+✅ Per-Agent Model Control
+
+Each agent can use a different LLM model via:
+
 agents:
   assistant:
     model: gemini-2.5-flash
-```
 
-## ⚙️ Installation
-### 1️⃣ Clone the repository
-```
-git clone https://github.com/your-username/Personal-helper.git  
+
+Future agents can safely use different models like:
+
+agents:
+  planner:
+    model: gemini-2.5-pro
+
+⚙️ Installation
+1️⃣ Clone the Repository
+git clone <your-repo-url>
 cd Personal-helper
-```
-### 2️⃣ Create virtual environment (recommended)
-```
-python -m venv venv  
+
+2️⃣ Create Virtual Environment (Recommended)
+python -m venv venv
 venv\Scripts\activate   # Windows
-```
-### 3️⃣ Install dependencies
-````
+
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-````
-## ▶️ Running the Agent
 
-    From project root:
+▶️ Running the Agent
 
-    adk run src
+From the project root:
 
-
-    Web UI:
-
-    adk web src
+adk run src
 
 
-    ADK automatically loads:
+Or use the web UI:
 
-    src/agent.py → agents/assistant/agent.py → root_agent
+adk web src
+
+
+✅ ADK automatically loads:
+
+src/agent.py → agents/assistant/agent.py → root_agent
+
