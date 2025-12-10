@@ -14,7 +14,7 @@ agents:
 
 logging:
   level: INFO
-  save_to_file: false         # set true if you want logs saved later
+  save_to_file: false         
   #file_path: logs/app.log
 
 
