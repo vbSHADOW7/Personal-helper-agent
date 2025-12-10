@@ -1,4 +1,4 @@
-🧠 Personal Helper Agent (Google ADK)
+## 🧠 Personal Helper Agent (Google ADK)
 
 A modular, scalable AI-powered personal assistant built using Google ADK (Agent Development Kit) with support for:
 
@@ -16,8 +16,9 @@ A modular, scalable AI-powered personal assistant built using Google ADK (Agent 
 
 This project is designed for research, experimentation, real-world deployment, and future expansion into specialized AI agents.
 
-📁 Project Structure
-C:.
+### 📁 Project Structure
+````
+project_root
 │   .env
 │   .env.example
 │   config.yaml
@@ -31,15 +32,17 @@ C:.
     ├───agents
     │   │   __init__.py
     │   └───assistant
-    │       │   agent.py        # ✅ Assistant agent (root agent)
+    │       │instructions.py
+    │       │agent.py        # ✅ Assistant agent 
     │       │   __init__.py
     │
     └───tools
             calc_tools.py      # ✅ Math expression evaluator
-            time_tools.py      # ✅ UTC-based time tool
+            time_tools.py      # ✅ time tool
             __init__.py
 
-🚀 Features
+````
+### 🚀 Features
 ✅ Root Assistant Agent
 
 Acts as the primary interface for users
@@ -79,7 +82,7 @@ agents:
   planner:
     model: gemini-2.5-pro
 
-⚙️ Installation
+## ⚙️ Installation
 1️⃣ Clone the Repository
 git clone <your-repo-url>
 cd Personal-helper

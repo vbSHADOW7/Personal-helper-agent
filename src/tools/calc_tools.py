@@ -33,17 +33,7 @@ def _eval_node(node: ast.AST) -> float:
 
 
 def calculate_expression(expression: str) -> Dict[str, Any]:
-    """
-    Safely evaluate a basic math expression (no variables or function calls).
 
-    Args:
-        expression: A math expression like "2 * (3 + 4) / 5".
-
-    Returns:
-        dict: A dictionary with the original expression and result:
-            - expression: the original string
-            - result: numeric result (float)
-    """
     try:
         tree = ast.parse(expression, mode="eval")
         result = _eval_node(tree.body)
