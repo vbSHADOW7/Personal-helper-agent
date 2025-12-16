@@ -14,14 +14,14 @@ agents:
 
 logging:
   level: INFO
-  save_to_file: false         
+  save_to_file: false
   #file_path: logs/app.log
 
 
 services:
   enable_google_search: false
-  enable_math_tools: true     # for calc_tools
-  enable_time_tools: true     # for time_tools
+  enable_math_tools: true
+  enable_time_tools: true
 
 
 
